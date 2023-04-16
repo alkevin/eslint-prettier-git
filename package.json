@@ -8,10 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",
-    "lint": "ng lint",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write .",
+    "lint": "npx eslint .",
     "lint:fix": "ng lint --fix",
-    "commit": "git-cz",
-    "prepare": "husky install"
+    "commit": "git-cz"
   },
   "private": true,
   "dependencies": {
@@ -56,5 +57,19 @@
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "typescript": "~4.9.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config-js"
+    }
   }
 }

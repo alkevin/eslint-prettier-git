@@ -1,4 +1,3 @@
-.husky
 dist
 coverage
 report
@@ -6,8 +5,6 @@ angular.json
 package.json
 package-lock.json
 karma.conf.js
-commitlint.config.js
-cz-config.js
 auto-spy.ts
 
 # Compiled output
